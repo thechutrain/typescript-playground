@@ -1,0 +1,14 @@
+{
+	"parserOptions": {
+		"ecmaVersion": 6
+	},
+	"env": {
+		"node": true
+	},
+	"extends": ["airbnb", "prettier"],
+	"plugins": ["prettier"],
+	"rules": {
+		"prettier/prettier": 0,
+		"no-console": 0
+	}
+}
