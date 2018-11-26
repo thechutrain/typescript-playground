@@ -8,7 +8,7 @@
 	"extends": ["airbnb", "prettier"],
 	"plugins": ["prettier"],
 	"rules": {
-		"prettier/prettier": 0,
+		"prettier/prettier": 1,
 		"no-console": 0
 	}
 }
