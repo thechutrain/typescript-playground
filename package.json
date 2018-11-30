@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"engines": {
-		"node": ">=8.12.0",
+		"node": ">=10.14.1",
 		"npm": ">=6.4.1"
 	},
 	"scripts": {
@@ -12,8 +12,8 @@
 		"prod": "cross-env NODE_ENV=production node src/index.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"format": "prettier --write \"src/**\"",
-		"lint": "eslint \"src/**\" --quiet",
-		"lint:fix": "eslint \"src/**\" --quiet --fix"
+		"lint": "eslint \"src/*.js\" --quiet",
+		"lint:fix": "eslint \"src/*.js\" --quiet --fix"
 	},
 	"keywords": [],
 	"author": "",
