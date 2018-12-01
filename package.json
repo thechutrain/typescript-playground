@@ -5,14 +5,15 @@
 	"main": "index.js",
 	"engines": {
 		"node": ">=10.14.1",
-		"npm": ">=6.4.1"
+		"npm": ">=6.4.1",
+		"yarn": ">=1.6.0"
 	},
 	"scripts": {
 		"start": "npm run prod",
-		"dev": "cross-env NODE_ENV=development npm run build-tsc && concurrently \"tsc -w\" \"nodemon dist/src/index.js\"",
-		"prod": "cross-env NODE_ENV=production npm run build-tsc && node dist/src/index.js",
+		"dev": "npm run rm && npm run build-tsc && concurrently \"tsc -w\" \"cross-env NODE_ENV=\"development\" nodemon dist/index.js\"",
+		"prod": "npm run rm && npm run build-tsc && cross-env NODE_ENV=\"production\" node dist/index.js",
 		"heroku-postbuild": "npm run build-tsc",
-		"deploy:heroku": "node dist/src/index.js",
+		"deploy:heroku": "node dist/index.js",
 		"rm": "rm -rf dist/",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"format": "prettier --write \"src/**\"",
@@ -36,7 +37,9 @@
 			"git add"
 		]
 	},
-	"dependencies": {},
+	"dependencies": {
+		"express": "^4.16.4"
+	},
 	"devDependencies": {
 		"@types/node": "^10.12.11",
 		"concurrently": "^4.1.0",

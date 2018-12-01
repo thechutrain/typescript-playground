@@ -2,5 +2,8 @@
 	"extends": ["tslint:latest", "tslint-eslint-rules", "tslint-config-prettier"],
 	"linterOptions": {
 		"exclude": ["data/**", "node_modules/**"]
+	},
+	"rules": {
+		"no-console": [false]
 	}
 }
