@@ -9,12 +9,15 @@
 	},
 	"scripts": {
 		"start": "npm run prod",
-		"dev": "cross-env NODE_ENV=development nodemon src/index.js ",
-		"prod": "cross-env NODE_ENV=production node src/index.js",
+		"dev": "cross-env NODE_ENV=development npm run build-tsc && concurrently \"tsc -w\" \"nodemon dist/index.js\"",
+		"prod": "cross-env NODE_ENV=production npm run build-tsc && node dist/index.js",
+		"rm": "rm -rf dist/",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"format": "prettier --write \"src/**\"",
 		"lint": "eslint \"src/*.js\" --quiet",
-		"lint:fix": "eslint \"src/*.js\" --quiet --fix"
+		"lint:fix": "eslint \"src/*.js\" --quiet --fix",
+		"build-tsc": "tsc",
+		"watch-tsc": "tsc -w"
 	},
 	"keywords": [],
 	"author": "",
@@ -36,9 +39,6 @@
 		"@types/node": "^10.12.11",
 		"concurrently": "^4.1.0",
 		"cross-env": "^5.2.0",
-		"express": "^4.16.4"
-	},
-	"devDependencies": {
 		"eslint": "^5.9.0",
 		"eslint-config-airbnb": "^17.1.0",
 		"eslint-config-prettier": "^3.3.0",
