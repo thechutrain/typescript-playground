@@ -9,15 +9,17 @@
 	},
 	"scripts": {
 		"start": "npm run prod",
-		"dev": "cross-env NODE_ENV=development npm run build-tsc && concurrently \"tsc -w\" \"nodemon dist/index.js\"",
-		"prod": "cross-env NODE_ENV=production npm run build-tsc && node dist/index.js",
+		"dev": "cross-env NODE_ENV=development npm run build-tsc && concurrently \"tsc -w\" \"nodemon dist/src/index.js\"",
+		"prod": "cross-env NODE_ENV=production npm run build-tsc && node dist/src/index.js",
 		"heroku-postbuild": "npm run build-tsc",
-		"deploy:heroku": "node dist/index.js",
+		"deploy:heroku": "node dist/src/index.js",
 		"rm": "rm -rf dist/",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"format": "prettier --write \"src/**\"",
 		"lint": "eslint \"src/*.js\" --quiet",
 		"lint:fix": "eslint \"src/*.js\" --quiet --fix",
+		"tslint": "tslint -c tslint.json -p tsconfig.json",
+		"tslint:fix": "tslint -c tslint.json -p tsconfig.json --fix",
 		"build-tsc": "tsc",
 		"watch-tsc": "tsc -w"
 	},
@@ -30,9 +32,9 @@
 		}
 	},
 	"lint-staged": {
-		"*.js": [
+		"src/*.ts": [
 			"npm run format",
-			"npm run lint:fix",
+			"npm run tslint:fix",
 			"git add"
 		]
 	},
@@ -52,6 +54,9 @@
 		"lint-staged": "^8.1.0",
 		"nodemon": "^1.18.7",
 		"prettier": "^1.15.2",
+		"tslint": "^5.11.0",
+		"tslint-config-prettier": "^1.17.0",
+		"tslint-eslint-rules": "^5.4.0",
 		"typescript": "^3.2.1"
 	}
 }
