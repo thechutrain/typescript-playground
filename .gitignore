@@ -12,6 +12,10 @@
 /build
 dist
 
+# env
+config/.env.development
+config/.env.production
+
 # misc
 .DS_Store
 .env.local
