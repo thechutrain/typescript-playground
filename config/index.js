@@ -10,8 +10,8 @@ switch (process.env.NODE_ENV.toUpperCase()) {
 
 	case "PRODUCTION":
 		require("dotenv-safe").config({
-			path: "./env.production",
-			sample: "./env.example"
+			path: path.join(__dirname, "./.env.production"),
+			sample: path.join(__dirname, "./.env.example")
 		});
 		break;
 
