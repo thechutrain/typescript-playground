@@ -13,7 +13,7 @@
 		"dev": "npm run rm && npm run build-tsc && concurrently \"tsc -w\" \"cross-env NODE_ENV=\"development\" nodemon dist/index.js\"",
 		"prod": "npm run rm && npm run build-tsc && cross-env NODE_ENV=\"production\" node dist/index.js",
 		"heroku-postbuild": "npm run build-tsc",
-		"deploy:heroku": "node dist/index.js",
+		"deploy:heroku": "cross-env NODE_ENV=\"heroku\" node dist/index.js",
 		"rm": "rm -rf dist/",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"format": "prettier --write \"src/**\"",
