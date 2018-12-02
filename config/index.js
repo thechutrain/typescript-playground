@@ -16,12 +16,12 @@ switch (process.env.NODE_ENV.toUpperCase()) {
 		break;
 
 	case "HEROKU":
-		// Can add environmental variables directly via the Heroku GUI
-		require("dotenv-safe").config({
-			path: path.join(__dirname, "./.env.heroku"),
-			sample: path.join(__dirname, "./.env.example"),
-			allowEmptyValues: true
-		});
+	// Can add environmental variables directly via the Heroku GUI
+	// require("dotenv-safe").config({
+	// 	path: path.join(__dirname, "./.env.heroku"),
+	// 	sample: path.join(__dirname, "./.env.example"),
+	// 	allowEmptyValues: true
+	// });
 	default:
 		throw new Error(
 			`process.env.NODE_ENV of "${process.env.NODE_ENV}" has no configuration`
