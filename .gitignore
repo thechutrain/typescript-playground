@@ -13,8 +13,8 @@
 dist
 
 # env
-config/.env.development
-config/.env.production
+config/.env.**
+!config/.env.example
 
 # misc
 .DS_Store
