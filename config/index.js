@@ -29,6 +29,3 @@ switch (process.env.NODE_ENV.toUpperCase()) {
 		);
 		break;
 }
-
-// Testing
-console.log(process.env.FOO);
