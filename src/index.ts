@@ -1,22 +1,22 @@
 import express = require("express");
 import morgan = require("morgan");
-
-//  ==== Load Environmental Variables ===
 // tslint:disable-next-line:no-var-requires
-require("../config");
+require("../config"); // imports .env config
+import apiRouter from "./controller";
 const app = express();
+
+// tslint:disable-next-line:no-var-requires
+const dbConnection = require("./database");
 
 const PORT = process.env.PORT || 7000;
 
-app.use(morgan("common"));
+app.use(morgan("common")); // Set logging
 
-app.get("/api", (req, res, next) => {
-	res.send("api route to be made");
-});
+app.use("/api/v1/", apiRouter);
 
-app.get("/*", (req, res, next) => {
-	res.send("Only routes that are processed are API & AUTH");
-
+app.use((req, res, next) => {
+	res.statusCode = 404;
+	res.send("URL not found");
 });
 
 app.listen(PORT, e => {
