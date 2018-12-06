@@ -3,20 +3,9 @@ import flashCardSchema from "./models/flashcard";
 
 export const FlashCard = mongoose.model("FlashCard", flashCardSchema);
 
-const {
-	MONGODB_URI,
-	DB_USERNAME,
-	DB_PASSWORD,
-	MONGO_HOST,
-	MONGODB_PORT,
-	MONGODB_DB_NAME
-} = process.env;
-const mongo_uri = MONGODB_URI
-	? MONGODB_URI
-	: `mongodb://${DB_USERNAME}:${DB_PASSWORD}@${MONGO_HOST}:${MONGODB_PORT}/${MONGODB_DB_NAME}`;
 const connectionPromise = mongoose.connect(
 	// TODO: template literal with username & password
-	mongo_uri,
+	process.env.MONGODB_URI,
 	{
 		useNewUrlParser: true // means you need to specify a port number
 	}
@@ -24,7 +13,9 @@ const connectionPromise = mongoose.connect(
 
 connectionPromise
 	.then(db => {
-		console.log(`Successfully connected to database @ ${mongo_uri}`);
+		console.log(
+			`Successfully connected to database @ ${process.env.MONGODB_URI}`
+		);
 	})
 	.catch(e => {
 		console.log(e);
