@@ -1,0 +1,8 @@
+#+TITLE: Enum
+* JavaScript:
+	const StatusCode = {}
+	StatusCode[StatusCode["Forbidden"] = 403] = "Forbidden";
+	- evaluates the inner-most content as the righ-hand assignment
+	- shorthand:
+	StatusCode['403'] = "Forbidden"
+	StatusCode['Forbidden'] = "403"
