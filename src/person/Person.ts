@@ -15,4 +15,7 @@ class Person {
 	}
 }
 
-export default Person;
+const al = new Person("alan", 14);
+console.log(al);
+
+// export default Person;
