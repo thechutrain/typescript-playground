@@ -2,10 +2,20 @@
 	"compilerOptions": {
 		"target": "es6",
 		"module": "commonjs",
-		"outDir": "dist",
-		"sourceMap": true,
-		"resolveJsonModule": true
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"allowJs": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitAny": false,
+		"noImplicitThis": false,
+		"strictNullChecks": false,
+		"outDir": "build",
+		"sourceMap": true
 	},
-	"include": ["src/**/*.ts"],
+	"include": ["src/**/*"],
 	"exclude": ["node_modules"]
 }
