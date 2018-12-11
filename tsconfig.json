@@ -13,9 +13,9 @@
 		"noImplicitAny": false,
 		"noImplicitThis": false,
 		"strictNullChecks": false,
-		"outDir": "build",
-		"sourceMap": true
+		"sourceMap": false,
+		"outDir": "build"
 	},
-	"include": ["src/**/*"],
+	"include": ["src/**/*.ts"],
 	"exclude": ["node_modules"]
 }

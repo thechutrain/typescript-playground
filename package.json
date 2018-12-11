@@ -9,18 +9,16 @@
 		"yarn": ">=1.6.0"
 	},
 	"scripts": {
-		"start": "npm run prod",
-		"dev": "npm run rm && npm run build-tsc && concurrently \"tsc -w\" \"cross-env NODE_ENV=\"development\" nodemon dist/index.js\"",
-		"prod": "npm run rm && npm run build-tsc && cross-env NODE_ENV=\"production\" node dist/index.js",
-		"heroku-postbuild": "npm run build-tsc",
-		"deploy:heroku": "cross-env NODE_ENV=\"heroku\" node dist/index.js",
-		"rm": "rm -rf dist/",
+		"start": "npm run dev",
+		"dev": "nodemon",
+		"build": "npm run clean && npm run build-tsc && concurrently \"tsc -w\" \"nodemon dist/index.js\"",
+		"clean": "rimraf build/",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"format": "prettier --write \"src/**\"",
 		"tslint": "tslint -c tslint.json -p tsconfig.json",
 		"tslint:fix": "tslint -c tslint.json -p tsconfig.json --fix",
-		"build-tsc": "tsc",
-		"watch-tsc": "tsc -w"
+		"tsc": "npm run clean && tsc",
+		"tsc:w": "npm run clean && tsc -w"
 	},
 	"keywords": [],
 	"author": "",
@@ -47,6 +45,8 @@
 		"lint-staged": "^8.1.0",
 		"nodemon": "^1.18.7",
 		"prettier": "^1.15.2",
+		"rimraf": "^2.6.2",
+		"ts-node": "^7.0.1",
 		"tslint": "^5.11.0",
 		"tslint-config-prettier": "^1.17.0",
 		"tslint-eslint-rules": "^5.4.0",
