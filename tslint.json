@@ -24,6 +24,15 @@
 		"ordered-imports": false,
 		"curly": [true, "ignore-same-line"],
 		"no-console": [false],
-		"object-literal-sort-keys": [false]
+		"object-literal-sort-keys": [false],
+		"variable-name": [
+			true,
+			"check-format",
+			"allow-leading-underscore",
+			"allow-trailing-underscore",
+			"allow-pascal-case",
+			"allow-snake-case",
+			"ban-keywords"
+		]
 	}
 }
