@@ -12,13 +12,13 @@
 		"no-void-expression": false,
 		"no-redundant-jsdoc": false,
 		"prefer-type-cast": false,
-		"typedef": [
-			true,
-			"parameter",
-			"arrow-parameter",
-			"property-declaration",
-			"member-variable-declaration"
-		],
+		// "typedef": [
+		// 	true,
+		// 	"parameter",
+		// 	"arrow-parameter",
+		// 	"property-declaration",
+		// 	"member-variable-declaration"
+		// ],
 		"no-null-keyword": false,
 		"no-any": false,
 		"ordered-imports": false,
@@ -33,6 +33,8 @@
 			"allow-pascal-case",
 			"allow-snake-case",
 			"ban-keywords"
-		]
+		],
+		"max-classes-per-file": false, // allow more than a single class in file
+		"member-access": false // dont warn if youre missing public, private other modifiers
 	}
 }
