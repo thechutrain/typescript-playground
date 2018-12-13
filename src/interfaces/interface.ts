@@ -1,30 +1,30 @@
-interface IDollarAmount {
-	cents: number;
-	dollars: number;
-}
+// interface IDollarAmount {
+// 	cents: number;
+// 	dollars: number;
+// }
 
-interface ICartItem {
-	itemName: string;
-	quantity: number;
-	price: IDollarAmount;
-}
+// interface ICartItem {
+// 	itemName: string;
+// 	quantity: number;
+// 	price: IDollarAmount;
+// }
 
-function getItemCost(cartItem: ICartItem): IDollarAmount {
-	const {
-		quantity,
-		price: { cents, dollars }
-	} = cartItem;
+// function getItemCost(cartItem: ICartItem): IDollarAmount {
+// 	const {
+// 		quantity,
+// 		price: { cents, dollars }
+// 	} = cartItem;
 
-	const centSum = (cents * quantity) % 100;
-	const dollarSum = dollars * quantity + Math.floor((cents * quantity) / 100);
+// 	const centSum = (cents * quantity) % 100;
+// 	const dollarSum = dollars * quantity + Math.floor((cents * quantity) / 100);
 
-	return {
-		cents: centSum,
-		dollars: dollarSum
-	};
-}
+// 	return {
+// 		cents: centSum,
+// 		dollars: dollarSum
+// 	};
+// }
 
-//  ======= TESTING =======
+// //  ======= TESTING =======
 // const cartItem1: ICartItem = {
 // 	itemName: "apples",
 // 	quantity: 2,
