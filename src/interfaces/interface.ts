@@ -1,15 +1,15 @@
-export interface IDollarAmount {
+interface IDollarAmount {
 	cents: number;
 	dollars: number;
 }
 
-export interface ICartItem {
+interface ICartItem {
 	itemName: string;
 	quantity: number;
 	price: IDollarAmount;
 }
 
-export function getItemCost(cartItem: ICartItem): IDollarAmount {
+function getItemCost(cartItem: ICartItem): IDollarAmount {
 	const {
 		quantity,
 		price: { cents, dollars }
